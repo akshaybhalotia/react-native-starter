@@ -1,0 +1,38 @@
+{
+  "name": "AwesomeProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "react-native": "^0.18.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-jest": "^6.0.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "jest-cli": "^0.8.2",
+    "react": "^0.14.6",
+    "react-addons-test-utils": "^0.14.6"
+  },
+  "jest": {
+    "scriptPreprocessor": "node_modules/babel-jest",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "packager/react-packager/src/Activity/"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "react",
+      "fbjs",
+      "promise",
+      "source-map"
+    ],
+    "verbose": true
+  }
+}
