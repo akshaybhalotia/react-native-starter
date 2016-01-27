@@ -8,10 +8,15 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 
 class AwesomeProject extends Component {
+  _proceedButtonPressed() {
+
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -25,6 +30,14 @@ class AwesomeProject extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <TouchableHighlight
+          onPress={this._proceedButtonPressed}
+          style={styles.action}
+          activeOpacity={0.8}
+          underlayColor='red'
+          >
+          <Text>Click here to proceed</Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -47,6 +60,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  action: {
+
+  }
 });
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
