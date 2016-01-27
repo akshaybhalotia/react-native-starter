@@ -10,6 +10,7 @@
     "react-native": "^0.18.1"
   },
   "devDependencies": {
+    "babel-core": "^6.4.5",
     "babel-jest": "^6.0.1",
     "babel-preset-react": "^6.3.13",
     "jest-cli": "^0.8.2",
@@ -17,7 +18,7 @@
     "react-addons-test-utils": "^0.14.6"
   },
   "jest": {
-    "scriptPreprocessor": "node_modules/babel-jest",
+    "scriptPreprocessor": "jestSupport/scriptPreprocess.js",
     "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
     "testPathIgnorePatterns": [
       "/node_modules/",
