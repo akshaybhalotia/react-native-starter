@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest --verbose"
+    "test": "jest --verbose --testRunner='<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js'"
   },
   "dependencies": {
     "react-native": "^0.18.1"
   },
   "devDependencies": {
-    "babel-core": "^6.4.5",
     "babel-jest": "^6.0.1",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
