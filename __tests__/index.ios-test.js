@@ -29,16 +29,3 @@ describe("AwesomeProject", function() {
     expect(result.props.children).toContain(<Text style={styles.instructions}>Got started, edited index.ios.js</Text>);
   });
 });
-
-// const shallowRenderer = TestUtils.createRenderer();
-//
-// class MyComponent extends View {
-//     render() {
-//         return (<Text>Hello!</Text>);
-//     }
-// }
-//
-// shallowRenderer.render(<MyComponent>Hello</MyComponent>);
-// let output = shallowRenderer.getRenderOutput();
-//
-// console.log(output);

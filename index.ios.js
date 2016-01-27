@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-// 'use strict';
+'use strict';
 import React, {
   AppRegistry,
   Component,
@@ -13,7 +13,6 @@ import React, {
 
 class AwesomeProject extends Component {
   render() {
-    console.log("render");
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
