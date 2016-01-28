@@ -46,12 +46,15 @@ describe("Welcome", function() {
 
   describe("has a button which on", function() {
 
-    var button, welcome;
+    var welcome, navigator;
     beforeEach(function() {
+      navigator = TestUtils.renderIntoDocument(
+        <Navigator />
+      );
+      spyOn(navigator, 'push');
       welcome = TestUtils.renderIntoDocument(
-				<Welcome />
+				<Welcome navigator={navigator}/>
 				);
-      spyOn(welcome, '_proceedButtonPressed').and.callThrough();
       var childElements = TestUtils.scryRenderedComponentsWithType(welcome, View);
       button = childElements[0].props.children.find(function(element, index, array) {
         return TestUtils.isElementOfType(element, TouchableHighlight);
@@ -71,9 +74,10 @@ describe("Welcome", function() {
     });
 
     it("proceeds to sign up form", function() {
+      // console.log(require('util').inspect(navigator.push, { depth: null }));
       button.props.onPress();
-      //
-      // expect(welcome._proceedButtonPressed).toBeCalled();
+
+      expect(navigator.push).toHaveBeenCalled();
     });
   });
 });

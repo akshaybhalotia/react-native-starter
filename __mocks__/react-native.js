@@ -24,6 +24,14 @@ class TouchableHighlight extends React.Component {
     return false;
   }
 }
+class Navigator extends React.Component {
+  render() {
+    return false;
+  }
+  push(object) {
+    return false;
+  }
+}
 
 ReactNative.AppRegistry = {
   registerComponent: jest.genMockFn()
@@ -32,5 +40,6 @@ ReactNative.AppRegistry = {
 ReactNative.View = View;
 ReactNative.Text = Text;
 ReactNative.TouchableHighlight = TouchableHighlight;
+ReactNative.Navigator = Navigator;
 
 module.exports = ReactNative;

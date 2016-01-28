@@ -1,7 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 import React, {
   AppRegistry,
@@ -15,7 +11,6 @@ class AwesomeProject extends Component {
 
   renderScene(route, navigator) {
     var Component = route.component;
-    console.log(require('util').inspect(Component, { depth: null }));
     return (
       <Component navigator={navigator} />
     )
@@ -41,3 +36,5 @@ var RouteStack = {
 }
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+module.exports = AwesomeProject;
+module.exports.RouteStack = RouteStack;
