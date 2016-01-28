@@ -9,9 +9,21 @@ ReactNative.StyleSheet = {
 };
 
 //Yup, quite naive
-class View extends React.Component {}
-class Text extends React.Component {}
-class TouchableHighlight extends React.Component {}
+class View extends React.Component {
+  render() {
+    return false;
+  }
+}
+class Text extends React.Component {
+  render() {
+    return false;
+  }
+}
+class TouchableHighlight extends React.Component {
+  render() {
+    return false;
+  }
+}
 
 ReactNative.AppRegistry = {
   registerComponent: jest.genMockFn()
