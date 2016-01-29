@@ -12,6 +12,7 @@ import React, {
 var TestUtils = require('react-addons-test-utils');
 var Welcome = require('../welcome');
 var styles = require('../welcome').Styles;
+var Navbar = require('../navbar');
 
 describe("Welcome", function() {
 
@@ -26,12 +27,16 @@ describe("Welcome", function() {
     expect(result.type).toBe(View);
   });
 
+  it("contains Navbar", function() {
+    expect(result.props.children).toContain(<Navbar><Text style={styles.title}>Welcome!</Text></Navbar>);
+  });
+
   it("contains Text", function() {
-    expect(result.props.children).toContain(<Text style={styles.instructions}>Got started, edited index.ios.js</Text>);
+    expect(result.props.children[1].props.children).toContain(<Text style={styles.instructions}>Got started, edited index.ios.js</Text>);
   });
 
   it("contains Button", function() {
-    expect(result.props.children).toContain(<TouchableHighlight
+    expect(result.props.children[1].props.children).toContain(<TouchableHighlight
       onPress={jasmine.any(Function)}
       style={styles.action}
       activeOpacity = {0.9}
@@ -46,7 +51,7 @@ describe("Welcome", function() {
 
   describe("has a button which on", function() {
 
-    var welcome, navigator;
+    var welcome, navigator, button;
     beforeEach(function() {
       navigator = TestUtils.renderIntoDocument(
         <Navigator />
@@ -56,7 +61,7 @@ describe("Welcome", function() {
 				<Welcome navigator={navigator}/>
 				);
       var childElements = TestUtils.scryRenderedComponentsWithType(welcome, View);
-      button = childElements[0].props.children.find(function(element, index, array) {
+      button = childElements[0].props.children[1].props.children.find(function(element, index, array) {
         return TestUtils.isElementOfType(element, TouchableHighlight);
       });
     });
@@ -74,7 +79,6 @@ describe("Welcome", function() {
     });
 
     it("proceeds to sign up form", function() {
-      // console.log(require('util').inspect(navigator.push, { depth: null }));
       button.props.onPress();
 
       expect(navigator.push).toHaveBeenCalled();

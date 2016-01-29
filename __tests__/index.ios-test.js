@@ -7,7 +7,8 @@ import React, {
 } from 'react-native';
 
 var TestUtils = require('react-addons-test-utils');
-import AwesomeProject, {RouteStack} from '../index.ios';
+var AwesomeProject = require('../index.ios');
+var RouteStack = require('../index.ios').RouteStack;
 import Welcome from '../app/components/welcome';
 
 describe("AwesomeProject", function() {

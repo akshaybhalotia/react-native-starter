@@ -8,6 +8,7 @@ import React, {
   View
 } from 'react-native';
 import Form from './form';
+import Navbar from './navbar';
 
 class Welcome extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Welcome extends Component {
   }
 
   _proceedButtonPressed() {
+    console.log("Yay!");
     this.props.navigator.push({
       name: 'Sign Up',
       component: Form
@@ -33,27 +35,32 @@ class Welcome extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          Got started, edited index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-        <TouchableHighlight
-          onPress={this._proceedButtonPressed.bind(this)}
-          style={styles.action}
-          activeOpacity={0.9}
-          underlayColor='#2279FF'
-          delayPressIn={40}
-          onPressIn={this._highlight.bind(this)}
-          onPressOut={this._unhighlight.bind(this)}
-          >
-          <Text style={{ color: this.state.textColor }}>Click here to proceed</Text>
-        </TouchableHighlight>
+        <Navbar>
+          <Text style={styles.title}>Welcome!</Text>
+        </Navbar>
+        <View style={styles.content}>
+          <Text style={styles.welcome}>
+            Welcome to React Native!
+          </Text>
+          <Text style={styles.instructions}>
+            Got started, edited index.ios.js
+          </Text>
+          <Text style={styles.instructions}>
+            Press Cmd+R to reload,{'\n'}
+            Cmd+D or shake for dev menu
+          </Text>
+          <TouchableHighlight
+            onPress={this._proceedButtonPressed.bind(this)}
+            style={styles.action}
+            activeOpacity={0.9}
+            underlayColor='#2279FF'
+            delayPressIn={40}
+            onPressIn={this._highlight.bind(this)}
+            onPressOut={this._unhighlight.bind(this)}
+            >
+            <Text style={{ color: this.state.textColor }}>Click here to proceed</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
@@ -62,9 +69,17 @@ class Welcome extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#F5FCFF',
+  },
+  title: {
+    flex: 1,
+    fontSize: 24,
+    textAlign: 'center',
+    alignSelf: 'flex-end',
+  },
+  content: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
