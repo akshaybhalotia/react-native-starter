@@ -24,6 +24,16 @@ class TouchableHighlight extends React.Component {
     return false;
   }
 }
+class ScrollView extends React.Component {
+  render() {
+    return false;
+  }
+}
+class TextInput extends React.Component {
+  render() {
+    return false;
+  }
+}
 class Navigator extends React.Component {
   render() {
     return false;
@@ -41,5 +51,7 @@ ReactNative.View = View;
 ReactNative.Text = Text;
 ReactNative.TouchableHighlight = TouchableHighlight;
 ReactNative.Navigator = Navigator;
+ReactNative.ScrollView = ScrollView;
+ReactNative.TextInput = TextInput;
 
 module.exports = ReactNative;

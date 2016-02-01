@@ -32,7 +32,7 @@ describe("Welcome", function() {
   });
 
   it("contains Text", function() {
-    expect(result.props.children[1].props.children).toContain(<Text style={styles.instructions}>Got started, edited index.ios.js</Text>);
+    expect(result.props.children[1].props.children).toContain(<Text style={jasmine.any(Object)}>Got started, edited index.ios.js</Text>);
   });
 
   it("contains Button", function() {
@@ -61,7 +61,9 @@ describe("Welcome", function() {
 				<Welcome navigator={navigator}/>
 				);
       var childElements = TestUtils.scryRenderedComponentsWithType(welcome, View);
-      button = childElements[0].props.children[1].props.children.find(function(element, index, array) {
+      var mainView = childElements[0];
+      var mainContent = mainView.props.children[1];
+      button = mainContent.props.children.find(function(element, index, array) {
         return TestUtils.isElementOfType(element, TouchableHighlight);
       });
     });
