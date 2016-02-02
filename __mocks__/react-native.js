@@ -34,11 +34,19 @@ class TextInput extends React.Component {
     return false;
   }
 }
+class DatePickerIOS extends React.Component {
+  render() {
+    return false;
+  }
+}
 class Navigator extends React.Component {
   render() {
     return false;
   }
   push(object) {
+    return false;
+  }
+  pop() {
     return false;
   }
 }
@@ -53,5 +61,6 @@ ReactNative.TouchableHighlight = TouchableHighlight;
 ReactNative.Navigator = Navigator;
 ReactNative.ScrollView = ScrollView;
 ReactNative.TextInput = TextInput;
+ReactNative.DatePickerIOS = DatePickerIOS;
 
 module.exports = ReactNative;

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
-    "test": "jest --verbose --testRunner='<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js'"
+    "test": "jest --verbose --testRunner='<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js' --watch"
   },
   "dependencies": {
     "react-native": "^0.18.1"
